@@ -1,0 +1,33 @@
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --sand: #f5efe6;
+  --terracotta: #c96a3a;
+  --deep: #1a1208;
+  --teal: #2a7d6f;
+  --gold: #d4a853;
+}
+
+html { scroll-behavior: smooth; }
+body { background: var(--deep); color: var(--sand); font-family: 'DM Sans', sans-serif; overflow-x: hidden; cursor: none; }
+
+input, button, select { font-family: 'DM Sans', sans-serif; cursor: none !important; }
+* { cursor: none !important; }
+
+@keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes float { 0%,100% { transform: translate(0,0) scale(1); } 33% { transform: translate(30px,-30px) scale(1.05); } 66% { transform: translate(-20px,20px) scale(.95); } }
+@keyframes blink { 0%,100% { opacity:1; } 50% { opacity:.3; } }
+@keyframes scrollTrack { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@keyframes cardFloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+@keyframes navIn { from { opacity:0; transform:translateY(-20px); } to { opacity:1; transform:translateY(0); } }
+@keyframes bgPulse { from { filter:brightness(1); } to { filter:brightness(1.08); } }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.reveal { opacity: 0; transform: translateY(40px); transition: opacity .8s ease, transform .8s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+.track-wrap:hover .track-inner { animation-play-state: paused !important; }
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #1a1208; }
+::-webkit-scrollbar-thumb { background: #c96a3a; border-radius: 3px; }
